@@ -1,1 +1,11 @@
-Application to count the number of words, lines and characters from standard input and displays it to output
+##Description
+This application counts lines, words and characters read from standard input and then displays these counts to standard output
+
+##Usage
+cat mytestfile.txt | ./myWC
+
+or 
+
+./myWC
+then input the string from the console
+
