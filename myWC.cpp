@@ -19,10 +19,15 @@ int main(){
     lineCount++;
     istringstream stream(line); //input stream of words delimited by a space
     while (stream >>  word) {
-        ++wordCount;
-        //char count
-        for (int i=0; i<word.length(); ++i) ++charCount;
+        
+        //char counter 
+        int cc=0;
+        for (int i=0; i<word.length(); ++i) {
+        if (isalnum(word[i]))  ++cc;
+        }
+        charCount = charCount+cc;
 
+        if (cc>0) ++wordCount;
         
     }}
     if (lineCount==0) ++lineCount;
