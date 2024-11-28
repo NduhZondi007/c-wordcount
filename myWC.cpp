@@ -3,24 +3,30 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
+
 using namespace std;
 
 int main(){
     //word count
     string word;
+    string line;
     int wordCount=0;
     int charCount=0;
-    int lineCount=1;
-    while (cin >> word) {
+    int lineCount=0;
+
+    while (getline(cin, line)){
+    lineCount++;
+    istringstream stream(line); //input stream of words delimited by a space
+    while (stream >>  word) {
         ++wordCount;
         //char count
         for (int i=0; i<word.length(); ++i) ++charCount;
 
-        //line cound
-        if (word.substr(word.length()-2,word.length()-1)=="\n" && word.length()>2) ++lineCount;
-    }
-
-    cout << "line count: " << lineCount << "Word Count: " << wordCount << "character count: " << charCount << endl;
+        
+    }}
+    if (lineCount==0) ++lineCount;
+    cout << "line count: " << lineCount << " Word Count: " << wordCount << " character count: " << charCount << endl;
 
     return 0;
         
